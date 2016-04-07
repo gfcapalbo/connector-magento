@@ -96,6 +96,9 @@ class MagentoBaseExporter(Exporter):
             # in rare case it can be empty, in doubt, import it
             return False
         sync_date = openerp.fields.Datetime.from_string(sync)
+        #check if dates are compatible format. 
+        #Magento Datetime format is hardcoded and need to comply
+        record['updated_at'] = record['updated_at'].replace('-','/')
         magento_date = datetime.strptime(record['updated_at'],
                                          MAGENTO_DATETIME_FORMAT)
         return sync_date < magento_date
