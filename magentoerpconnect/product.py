@@ -430,7 +430,6 @@ class ProductImportMapper(ImportMapper):
     direct = [('name', 'name'),
               ('description', 'description'),
               ('weight', 'weight'),
-              ('cost', 'standard_price'),
               ('short_description', 'description_sale'),
               ('sku', 'default_code'),
               ('type_id', 'product_type'),
