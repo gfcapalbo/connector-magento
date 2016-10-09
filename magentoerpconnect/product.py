@@ -491,8 +491,6 @@ class ProductImportMapper(ImportMapper):
                 main_categ_id = default_categ.id
 
         result = {'categ_ids': [(6, 0, category_ids)]}
-        if main_categ_id:  # OpenERP assign 'All Products' if not specified
-            result['categ_id'] = main_categ_id
         return result
 
     @mapping
